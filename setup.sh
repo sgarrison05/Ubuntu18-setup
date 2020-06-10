@@ -1,18 +1,16 @@
 #!/bin/bash
 
-# Ubuntu (GNOME) 18.04 setup script.
+# Ubuntu/Debian Desktop setup script.
 
-dpkg -l | grep -qw gdebi || sudo apt-get install -yyq gdebi
 
 # Initial Software
 
 sudo apt update
 
-sudo apt install virtualbox virtualbox-guest-additions-iso virtualbox-ext-pack \
-net-tools htop lame git mc flatpak audacity \
-openssh-server sshfs gedit-plugin-text-size simplescreenrecorder nano \
-ubuntu-restricted-extras mpv vlc gthumb gnome-tweaks \
-gnome-tweak-tool qt5-style-plugins spell synaptic -yy
+sudo apt install \
+net-tools htop git vim vim-gtk3 jp2a calcurse elinks sc vifm \
+ubuntu-restricted-extras figlet newsbeuter neomutt \
+netcat nmap traceroute gufw terminator -yy
 
 # Add me to any groups I might need to be a part of:
 
@@ -20,13 +18,7 @@ sudo adduser $USER vboxusers
 
 # Remove undesirable packages:
 
-sudo apt purge gstreamer1.0-fluendo-mp3 deja-dup shotwell whoopsie whoopsie-preferences -yy
-
-# Remove snaps and get packages from apt:
-
-sudo snap remove gnome-characters gnome-calculator gnome-system-monitor
-sudo apt install gnome-characters gnome-calculator gnome-system-monitor \
-gnome-software-plugin-flatpak -yy
+sudo apt purge deja-dup -yy
 
 # Purge Firefox, install Chromium:
 
@@ -39,20 +31,19 @@ if [ -d "/home/$USER/.cache/mozilla" ]; then
     rm -rf /home/$USER/.cache/mozilla
 fi
 
-sudo apt install chromium-browser
+sudo apt install -y  chromium-browser
 
-gsettings set com.ubuntu.update-notifier show-livepatch-status-icon false
-#set icons to minimize on click
-gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
-
-## Remove junk
-sudo apt-get remove ubuntu-web-launchers thunderbird rhythmbox -y
+sudo apt remove ubuntu-web-launchers thunderbird rhythmbox -y
 
 ## Multimedia
-sudo apt-get install -y gimp scribus
+sudo apt install -y gimp scribus vlc dia kazam vym
+
+## Utilities
+sudo apt install -y clipit filezilla bleachbit gparted bluefish \
+    libreoffice-base libreoffice-draw calibre 
 
 ## Games
-sudo apt-get install -y steam-installer
+sudo apt-get install -y gweled armagetronad lightsoff
 
 ## Disable Apport
 sudo sed -i 's/enabled=1/enabled=0/g' /etc/default/apport
