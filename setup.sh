@@ -10,7 +10,7 @@ sudo apt update
 sudo apt install \
 net-tools htop git vim vim-gtk3 jp2a calcurse elinks sc vifm \
 ubuntu-restricted-extras figlet newsbeuter neomutt \
-netcat nmap traceroute gufw terminator -yy
+openssh netcat nmap traceroute gufw terminator -yy
 
 # Add me to any groups I might need to be a part of:
 
@@ -20,7 +20,7 @@ sudo adduser $USER vboxusers
 
 sudo apt purge deja-dup -yy
 
-# Purge Firefox, install Chromium:
+# Purge Firefox, install Brave:
 
 sudo apt purge firefox -yy
 sudo apt purge firefox-locale-en -yy
@@ -31,7 +31,7 @@ if [ -d "/home/$USER/.cache/mozilla" ]; then
     rm -rf /home/$USER/.cache/mozilla
 fi
 
-sudo apt install -y  chromium-browser
+sudo apt install -y  brave
 
 sudo apt remove ubuntu-web-launchers thunderbird rhythmbox -y
 
