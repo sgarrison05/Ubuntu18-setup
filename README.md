@@ -1,4 +1,4 @@
-# Ubuntu18-Desktop-setup
+# Ubuntu18-setup
 
 Use the following command to run the script easily in one run:
 
