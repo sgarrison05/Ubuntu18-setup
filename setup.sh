@@ -8,8 +8,8 @@
 sudo apt update
 
 sudo apt install \
-net-tools htop git vim vim-gtk3 jp2a calcurse elinks sc vifm \
-ubuntu-restricted-extras figlet newsbeuter neomutt \
+net-tools htop git vim calcurse elinks sc vifm \
+ubuntu-restricted-extras figlet newsboat \
 openssh netcat nmap traceroute gufw terminator -yy
 
 # Add me to any groups I might need to be a part of:
@@ -31,7 +31,7 @@ if [ -d "/home/$USER/.cache/mozilla" ]; then
     rm -rf /home/$USER/.cache/mozilla
 fi
 
-sudo apt install -y  brave
+sudo apt install -y  brave-browser
 
 sudo apt remove ubuntu-web-launchers thunderbird rhythmbox -y
 
@@ -39,7 +39,7 @@ sudo apt remove ubuntu-web-launchers thunderbird rhythmbox -y
 sudo apt install -y gimp scribus vlc dia kazam vym
 
 ## Utilities
-sudo apt install -y clipit filezilla bleachbit gparted bluefish \
+sudo apt install -y diodon filezilla bleachbit gparted bluefish \
     libreoffice-base libreoffice-draw calibre 
 
 ## Games
