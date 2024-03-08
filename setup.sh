@@ -49,7 +49,7 @@ sudo apt-get install -y gweled armagetronad lightsoff
 sudo sed -i 's/enabled=1/enabled=0/g' /etc/default/apport
 
 # Gotta reboot now:
-sudo apt update && sudo apt upgrade -y
+sudo apt upgrade -y
 
 echo $'\n'$"*** All done! Please reboot now. ***"
 
